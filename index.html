@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>CS 2450 : Final Project</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans:300,400&display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      * {
+        font-size: 16px;
+        outline: none !important;
+        font-family: "Inconsolata", monospace;
+      }
+      h1 {
+        margin: 0 auto;
+        font-size: 30px;
+        color: white;
+        text-align: center;
+
+        font-family: "Open Sans", sans-serif;
+        margin-bottom: 100px;
+        padding-bottom: 30px;
+        border-bottom: 1.5px solid white;
+        width: 800px;
+      }
+      body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 80%;
+        margin: 50px auto 100px;
+        background-image: linear-gradient(
+            rgba(205, 92, 92, 0.95),
+            rgba(205, 92, 92, 0.95)
+          ),
+          url(https://i.imgur.com/0X9bfZ0.gif);
+      }
+      #json-input {
+        display: block;
+        width: 100%;
+        height: 200px;
+      }
+      #translate {
+        display: block;
+        height: 28px;
+        margin: 20px 0;
+        border-radius: 3px;
+        border: 2px solid;
+        cursor: pointer;
+      }
+      #json-display {
+        background: none !important;
+        margin: 0;
+        padding: 10px 20px;
+        cursor: default;
+      }
+      .json-string {
+        color: #fff !important;
+      }
+      .json-property {
+        color: #191919 !important;
+        line-height: 162%;
+        font-weight: 900 !important;
+      }
+      a.json-toggle:before {
+        color: #fff !important;
+      }
+      pre#json-display {
+        width: 800px !important;
+        margin: 0 auto;
+      }
+      .json-placeholder {
+        color: white !important;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./dist/jquery.json-editor.min.js"
+    ></script>
+
+    <h1>CS 2450 : Final Project Notes</h1>
+    <textarea id="json-input" autocomplete="off" style="display:none;">
+      {
+        "Sunland County": {
+          "Census": {
+            "Registered_Voters_Count": "149,000",
+            "Precinct_Count": "149",
+            "Polling_Location_Count": "40"
+          },
+          "Staff": {
+            "Rules": [
+              "Only workers that have direct access to the new software would be workers at the office"
+            ],
+            "clerk_Auditor": {
+              "Responsibilities": {
+                "Administering_Election_Areas": [
+                  "Federal",
+                  "State",
+                  "County",
+                  "Municiple"
+                ],
+                "Accomidating_Election_Process": [
+                  "securing voting locations",
+                  "hiring pole Workers",
+                  "obtaining voting Equipment",
+                  "maintaining voting Equipment",
+                  "delivering polling equipment to each location",
+                  "publish information about voting process",
+                  "distribute ballots"
+                ]
+              }
+            },
+            "Polling_Managers": "40",
+            "Full_Time": "6",
+            "Part_Time": "5",
+            "Interns": "Unspecified count",
+            "Poll_workers": "200-500"
+          },
+          "Voting_Process": {
+            "Transporting_Polling_Equipment": {
+              "staff_usage": "requires 5 part-time team members",
+              "total_logging_time": "1 full week to log send and return info",
+              "total_return_items_to_inventory_time": "3 weeks",
+              "Overview": "Transport voting equipment from warehouses/storage to each polling location",
+              "Carts": {
+                "Cart_count": "anywhere from 40 - 120 carts",
+                "Rules": [
+                  "Polling locations can have anywhere from 1 - 3 carts",
+                  "Every cart has the exact same items on it",
+                  "By federal regulation: Every voting machine must be audited/tested 2x per year"
+                ],
+                "Details": {
+                  "Sending_Cart": {
+                    "Logging": {
+                      "Steps": [
+                        "Pull item from inventory",
+                        "write down serial number",
+                        "add serial number to log book",
+                        "place item in cart or bin",
+                        "repeat for each item ↑",
+                        "write down location",
+                        "wait for poll manager pickup cart",
+                        "write down in log book: poll manager name & location"
+                      ]
+                    }
+                  },
+                  "Recieving_Cart": {
+                    "Logging": {
+                      "Rules": [
+                        "damaged items recieve a note in log book: status of decommissioned OR needs repair"
+                      ],
+                      "Steps": [
+                        "Visual Check of cart and bin to find missing items",
+                        "after all carts are recieved, inventory begins",
+                        "take each item from cart",
+                        "log item in log book",
+                        "return item to inventory"
+                      ]
+                    }
+                  }
+                },
+                "Items": {
+                  "Voting_Machines": {
+                    "Life_Span": "10 Yrs (Automatically replaced after this time)",
+                    "bi_annual_audit": [
+                      "logged in log book when each is sent off: serial number, date",
+                      "logged in log book when each is returned: date, result(pass/fail), comments",
+                      "decommission or replace if failed twice in a row"
+                    ]
+                  },
+                  "Printers": "5",
+                  "Stands": "5",
+                  "Voting_Sign": "10",
+                  "ADA_Sign": "5",
+                  "I_Voted_Stickers": "Unspecified count",
+                  "Pens_and_papers": "Unspecified count",
+                  "Laptop": "Checking voters in",
+                  "Hotspot": "Internet access",
+                  "Card_Encoder": "Reading plastic voting Card (Given to each voter)",
+                  "Headset_and_Keypad": "For use of vision impared",
+                  "Handheld_Scanner": "For scanning drivers licsense/Voter ID card",
+                  "Privacy_Booth": "For each voting machine",
+                  "Muzzle_Box": "For paper ballots (Optional)",
+                  "Power_Equipment": ["power strips", "extention cords"]
+                }
+              },
+              "Problems": [
+                "Logging Each Item within each cart is a very manual/time-consuming process",
+                "Items are sometimes lost/misplaced including some replacements"
+              ]
+            }
+          },
+          "Revenue": {
+            "County_Sales_Tax": "~~~",
+            "County_Misc_Tax": "~~~",
+            "Candidate_Filing_Fees": "50 - 800",
+            "City_Payroll": "During Municiple Years",
+            "County_Payroll": "During Presidential Years",
+            "TOTAL": "412,000"
+          },
+          "Expenses": {
+            "Auditor": "95,000/y",
+            "Full_Time": "45,000/y - 46,000/y * 6 workers",
+            "Part_Time": "(15/h - 18/h) * 5 workers",
+            "Poll_Managers": "200/d * 40 workers",
+            "Poll_Workers": "145/d * (200 to 500 workers)",
+            "Publication/Ads": "13000/y"
+          }
+        },
+        "Software_Tracking_System": {
+          "Main_Focus": "Inventory Tracking and logging",
+          "Goal": "save 40% of the time",
+          "Budget": "Fixed unspecified ammount - We provide apprx. cost",
+          "OS_Compatibility": ["Windows 10"],
+          "Features": {
+            "Barcode_Integration": [
+              "scan barcode on cart",
+              "scan barcode on item",
+              "place item in cart/bin",
+              "repeat for each item ↑",
+              "polling manager scans each cart to location"
+            ],
+            "History_Viewer": [
+              "Item status(in/out)",
+              "Date(in/out)",
+              "Location(sent to)",
+              "Repair Status",
+              "Tested Dates",
+              "Notes(cracked screen?)"
+            ],
+            "Desktop & Scanner Compatibility": [
+              "software will be available to use on both scanners and desktop application"
+            ],
+            "Miscellaneous": [
+              "Ability to type barcode number into application without needing scanner"
+            ]
+          },
+          "Hardware_Needed": {
+            "Scanners": [
+              "We figure out which scanners would be best",
+              "Needs to be mobile",
+              "Needs to be wireless",
+              "Needs some kind of keypad",
+              "Cannot be a personal phone",
+              "i.e. Walmart phone scanner"
+            ]
+          },
+          "Database": "Centralized Federal Database - Editable",
+          "Warrenty": "Continual(Software issues/bugs)",
+          "Due_Date": "April"
+        }
+      }
+    </textarea>
+    <pre id="json-display"></pre>
+
+    <script type="text/javascript">
+      function getJson() {
+        try {
+          return JSON.parse($("#json-input").val());
+        } catch (ex) {
+          alert("Wrong JSON Format: " + ex);
+        }
+      }
+
+      var editor = new JsonEditor("#json-display", getJson());
+      $("#translate").on("click", function() {
+        editor.load(getJson());
+      });
+    </script>
+  </body>
+  <script type="text/javascript">
+    for (var i = 1; i < $(".json-toggle").length; i++) {
+      $(".json-toggle")[i].click();
+    }
+    var _gaq = _gaq || [];
+    _gaq.push(["_setAccount", "UA-36251023-1"]);
+    _gaq.push(["_setDomainName", "jqueryscript.net"]);
+    _gaq.push(["_trackPageview"]);
+
+    (function() {
+      var ga = document.createElement("script");
+      ga.type = "text/javascript";
+      ga.async = true;
+      ga.src =
+        ("https:" == document.location.protocol
+          ? "https://ssl"
+          : "http://www") + ".google-analytics.com/ga.js";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</html>
